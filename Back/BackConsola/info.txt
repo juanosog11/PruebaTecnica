@@ -1,0 +1,281 @@
+SocialNetworkConsoleApp/
+├── Models/
+│   ├── PostConsole.cs
+│   └── UsuarioConsole.cs
+├── Services/
+│   └── SocialNetworkConsole.cs
+├── SocialNetworkConsoleApp.Tests/
+│   ├── obj
+│   └── SocialNetworkTests.cs
+├── Program.cs
+
+SocialNetworkConsoleApp.csproj
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <StartupObject>Program</StartupObject> <!-- Añade esta línea -->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.5.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+  </ItemGroup>
+</Project>
+
+
+Models
+
+post
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SocialNetworkConsoleApp.Models
+{
+    public class PostConsole
+    {
+        public string Content { get; }
+        public UsuarioConsole Author { get; }
+        public DateTime Timestamp { get; }
+
+        public PostConsole(string content, UsuarioConsole author, DateTime timestamp)
+        {
+            Content = content;
+            Author = author;
+            Timestamp = timestamp;
+        }
+
+        public override string ToString()
+        {
+            return $"{Content} @{Author.Usuarioname} @{Timestamp:HH:mm}";
+        }
+    }
+}
+
+
+Usuario
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SocialNetworkConsoleApp.Models
+{
+    public class UsuarioConsole
+    {
+        public string Usuarioname { get; set; }
+        public List<PostConsole> Posts { get; set; }
+        public List<UsuarioConsole> Following { get; set; }
+
+        public UsuarioConsole(string usuarioname)
+        {
+            Usuarioname = usuarioname;
+            Posts = new List<PostConsole>();
+            Following = new List<UsuarioConsole>();
+        }
+
+        public void AddPost(string content, DateTime timestamp)
+        {
+            Posts.Add(new PostConsole(content, this, timestamp));
+        }
+
+        public void Follow(UsuarioConsole usuario)
+        {
+            if (!Following.Contains(usuario))
+            {
+                Following.Add(usuario);
+            }
+        }
+    }
+}
+
+
+services
+SocialNetworkConsole
+
+using SocialNetworkConsoleApp.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace SocialNetworkConsoleApp.Services
+{
+    public class SocialNetworkConsole
+    {
+        private Dictionary<string, UsuarioConsole> Usuarios;
+
+        public SocialNetworkConsole()
+        {
+            Usuarios = new Dictionary<string, UsuarioConsole>();
+        }
+
+        public UsuarioConsole GetUsuario(string Usuarioname)
+        {
+            if (!Usuarios.ContainsKey(Usuarioname))
+            {
+                Usuarios[Usuarioname] = new UsuarioConsole(Usuarioname);
+            }
+            return Usuarios[Usuarioname];
+        }
+
+        public void PostMessage(string Usuarioname, string content, DateTime timestamp)
+        {
+            var Usuario = GetUsuario(Usuarioname);
+            Usuario.AddPost(content, timestamp);
+            Console.WriteLine($"{Usuarioname} posted -> \"{content}\" @{timestamp:HH:mm}");
+        }
+
+        public void Follow(string follower, string followee)
+        {
+            var followerUsuario = GetUsuario(follower);
+            var followeeUsuario = GetUsuario(followee);
+
+            if (followerUsuario == followeeUsuario)
+            {
+                Console.WriteLine($"{follower} cannot follow themselves.");
+            }
+            else
+            {
+                followerUsuario.Follow(followeeUsuario);
+                Console.WriteLine($"{follower} empezó a seguir a {followee}");
+            }
+        }
+
+        public void ShowDashboard(string Usuarioname)
+        {
+            var Usuario = GetUsuario(Usuarioname);
+            var posts = Usuario.Following
+                            .SelectMany(f => f.Posts)
+                            .OrderBy(p => p.Timestamp)
+                            .ToList();
+
+            foreach (var post in posts)
+            {
+                Console.WriteLine(post);
+            }
+        }
+    }
+}
+
+
+test
+SocialNetworkConsoleTests
+
+using SocialNetworkConsoleApp.Services;
+using Xunit;
+using SocialNetworkConsoleApp.Models;
+
+namespace SocialNetworkConsoleApp.Tests
+{
+    public class SocialNetworkTests
+    {
+        private readonly SocialNetworkConsole _network;
+
+        public SocialNetworkTests()
+        {
+            _network = new SocialNetworkConsole();
+        }
+
+        [Fact]
+        public void UsuarioCanPostMessage()
+        {
+            _network.PostMessage("Alfonso", "Hola Mundo", DateTime.Now);
+            var usuario = _network.GetUsuario("Alfonso");
+
+            Assert.Single(usuario.Posts);
+            Assert.Equal("Hola Mundo", usuario.Posts[0].Content);
+        }
+
+        [Fact]
+        public void UsuarioCanFollowAnotherUsuario()
+        {
+            _network.Follow("Alicia", "Ivan");
+            var alicia = _network.GetUsuario("Alicia");
+            var ivan = _network.GetUsuario("Ivan");
+
+            Assert.Contains(ivan, alicia.Following);
+        }
+
+        [Fact]
+        public void DashboardShowsPostsFromFollowing()
+        {
+            var timestamp1 = DateTime.Now.AddMinutes(-10);
+            var timestamp2 = DateTime.Now.AddMinutes(-5);
+            _network.PostMessage("Alfonso", "Hola Mundo", timestamp1);
+            _network.PostMessage("Ivan", "Hoy puede ser un gran día", timestamp2);
+            _network.Follow("Alicia", "Alfonso");
+            _network.Follow("Alicia", "Ivan");
+
+            var output = new StringWriter();
+            Console.SetOut(output);
+            _network.ShowDashboard("Alicia");
+            var result = output.ToString().Trim();
+
+            Assert.Contains("Hola Mundo @Alfonso", result);
+            Assert.Contains("Hoy puede ser un gran día @Ivan", result);
+        }
+
+
+    }
+}
+
+program
+
+using System;
+using SocialNetworkConsoleApp.Services;
+
+class Program
+{
+    static void Main()
+    {
+        var network = new SocialNetworkConsole();
+
+        while (true)
+        {
+            var input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input)) continue;
+
+            var parts = input.Split(' ', 3);
+            var command = parts[0];
+            var username = parts[1].TrimStart('@');
+
+            switch (command.ToLower())
+            {
+                case "post":
+                    var postContent = parts[2];
+                    var timestamp = DateTime.Now;
+                    network.PostMessage(username, postContent, timestamp);
+                    break;
+
+                case "follow":
+                    var followee = parts[2].TrimStart('@');
+                    network.Follow(username, followee);
+                    break;
+
+                case "wall":
+                    Console.WriteLine(username);
+                    network.ShowDashboard(username);
+                    break;
+
+                default:
+                    Console.WriteLine("Comando no reconocido.");
+                    break;
+            }
+        }
+    }
+}

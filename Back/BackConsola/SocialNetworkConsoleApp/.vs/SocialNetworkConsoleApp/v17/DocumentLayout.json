@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|d:\\prueba_tecnica_trabajo\\back\\backconsola\\socialnetworkconsoleapp\\adapters\\cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|solutionrelative:adapters\\cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|d:\\prueba_tecnica_trabajo\\back\\backconsola\\socialnetworkconsoleapp\\socialnetworkconsoleapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|solutionrelative:socialnetworkconsoleapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|d:\\prueba_tecnica_trabajo\\back\\backconsola\\socialnetworkconsoleapp\\core\\models\\postconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|solutionrelative:core\\models\\postconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|d:\\prueba_tecnica_trabajo\\back\\backconsola\\socialnetworkconsoleapp\\core\\models\\usuarioconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|solutionrelative:core\\models\\usuarioconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|d:\\prueba_tecnica_trabajo\\back\\backconsola\\socialnetworkconsoleapp\\core\\services\\socialnetworkconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|solutionrelative:core\\services\\socialnetworkconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|d:\\prueba_tecnica_trabajo\\back\\backconsola\\socialnetworkconsoleapp\\tests\\socialnetworktests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E42D8798-8F2D-4FA9-B2E8-118A8AD04723}|SocialNetworkConsoleApp.csproj|solutionrelative:tests\\socialnetworktests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 202,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SocialNetworkTests.cs",
+              "DocumentMoniker": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Tests\\SocialNetworkTests.cs",
+              "RelativeDocumentMoniker": "Tests\\SocialNetworkTests.cs",
+              "ToolTip": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Tests\\SocialNetworkTests.cs",
+              "RelativeToolTip": "Tests\\SocialNetworkTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T09:28:07.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SocialNetworkConsole.cs",
+              "DocumentMoniker": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Core\\Services\\SocialNetworkConsole.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\SocialNetworkConsole.cs",
+              "ToolTip": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Core\\Services\\SocialNetworkConsole.cs",
+              "RelativeToolTip": "Core\\Services\\SocialNetworkConsole.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAiwEIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T07:58:28.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioConsole.cs",
+              "DocumentMoniker": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Core\\Models\\UsuarioConsole.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\UsuarioConsole.cs",
+              "ToolTip": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Core\\Models\\UsuarioConsole.cs",
+              "RelativeToolTip": "Core\\Models\\UsuarioConsole.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAIwCMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T07:58:06.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PostConsole.cs",
+              "DocumentMoniker": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Core\\Models\\PostConsole.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\PostConsole.cs",
+              "ToolTip": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Core\\Models\\PostConsole.cs",
+              "RelativeToolTip": "Core\\Models\\PostConsole.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T07:57:51.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SocialNetworkConsoleApp.csproj",
+              "DocumentMoniker": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\SocialNetworkConsoleApp.csproj",
+              "RelativeDocumentMoniker": "SocialNetworkConsoleApp.csproj",
+              "ToolTip": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\SocialNetworkConsoleApp.csproj",
+              "RelativeToolTip": "SocialNetworkConsoleApp.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-30T07:49:46.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Adapters\\CLI\\Program.cs",
+              "RelativeDocumentMoniker": "Adapters\\CLI\\Program.cs",
+              "ToolTip": "D:\\Prueba_tecnica_trabajo\\Back\\BackConsola\\SocialNetworkConsoleApp\\Adapters\\CLI\\Program.cs",
+              "RelativeToolTip": "Adapters\\CLI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T07:46:45.58Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
